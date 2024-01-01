@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Panel</title>
+    <link href="/fa/css/all.css" rel="stylesheet">
+    <link href="/styles/style.css" rel="stylesheet" type="text/css">
+    <link href="/styles/users.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<%- include('components/header') %>
+
+
+<div class="content-wrapper">
+
+    <%- include('components/sidebar') %>
+
+    <div class="main-content">
+        <!-- Filters Section -->
+        <div class="filters">
+            <div class="filters">
+                <input type="text" id="search-subscription" placeholder="Search By Subscription">
+                <select id="batch-name">
+                    <option value="">Select Batch Name</option>
+                    <option value="batch1">Batch 1</option>
+                    <option value="batch2">Batch 2</option>
+                    <!-- Add more batches as needed -->
+                </select>
+                <select id="rate-plan">
+                    <option value="">All Rate Plans</option>
+                    <option value="plan1">Plan 1</option>
+                    <option value="plan2">Plan 2</option>
+                    <!-- Add more rate plans as needed -->
+                </select>
+                <select id="subscriber-status">
+                    <option value="">Active Subscribers</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                    <!-- Add more statuses as needed -->
+                </select>
+                <input type="text" id="search-uuid" placeholder="Search UUID">
+                <button id="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="refresh-container">
+            <button id="refresh-button" title="Refresh">
+                <i class="fa fa-refresh"></i> Refresh
+            </button>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>SN</th>
+                <th>Account ID</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Signup Method</th>
+                <th>Subscription</th>
+                <th>Password</th>
+                <th>Type</th>
+                <th>Activate At</th>
+                <th>First Login</th>
+                <th>Last Login</th>
+                <th>Expire Date</th>
+                <th>Expired At</th>
+                <th>No of days</th>
+                <th>Country</th>
+                <th>Status</th>
+                <th>All</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Fake Data Rows -->
+            <!-- Repeat this block for 20 rows with different data for each row -->
+            <% for(let i = 1; i <= 15; i++) { %>
+                <tr>
+                    <td><%= i %></td>
+                    <td>2023<%= String(i).padStart(8, '0') %></td>
+                    <td>user<%= i %>@example.com</td>
+                    <td>FirstName<%= i %></td>
+                    <td>LastName<%= i %></td>
+                    <td>Email</td>
+                    <td>Basic</td>
+                    <td>********</td>
+                    <td>User</td>
+                    <td>2023-01-01</td>
+                    <td>2023-01-02</td>
+                    <td>2023-01-10</td>
+                    <td>2024-01-01</td>
+                    <td>Not Yet</td>
+                    <td><%= 365 - i %></td>
+                    <td>USA</td>
+                    <td>Active</td>
+                    <td><input type="checkbox"></td>
+                    <td><button>Edit</button></td>
+                </tr>
+            <% } %>
+            <!-- ... additional rows ... -->
+            </tbody>
+        </table>
+
+        <!-- Pagination Section -->
+        <div class="pagination">
+            <!-- Pagination buttons should be dynamic based on the total number of pages -->
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#" class="active">2</a>
+            <a href="#">3</a>
+            <!-- ... other page numbers ... -->
+            <a href="#">&raquo;</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

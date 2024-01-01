@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-panel {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-header {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 3px 3px 0 0;
+            font-size: 24px;
+            margin: -20px -20px 20px -20px;
+        }
+
+        .login-body {
+            margin-bottom: 20px;
+        }
+
+        .login-body input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .login-button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #00397a;
+        }
+
+        .login-footer {
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .login-footer a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="login-panel">
+    <div class="login-header">Login</div>
+    <div class="login-body">
+        <form>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+    </div>
+    <div class="login-footer">
+        <a href="#">Reset Password</a>
+
+        <a href="/signup">Signup</a>
+    </div>
+</div>
+</body>
+</html>

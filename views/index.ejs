@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Panel</title>
+    <link href="/fa/css/all.css" rel="stylesheet">
+    <link href="/styles/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<%- include('components/header') %>
+
+
+<div class="content-wrapper">
+
+    <%- include('components/sidebar') %>
+
+    <div class="main-content">
+        <div class="refresh-container">
+            <!-- ... other content ... -->
+            <div class="timestamp-button-group">
+                <span>Last Refresh Time: 01 Jan, 2024 11:35:49</span>
+                <button id="refreshButton">Refresh</button>
+            </div>
+        </div>
+        <h3>User is <%= isAuthenticated %></h3>
+
+        <div class="stats">
+            <!-- Repeat this structure for each stat box -->
+            <div class="box subscribed-users">
+                <h4>Total Subscribed Users</h4>
+                <p>0</p>
+            </div>
+            <div class="box free-users">
+                <h4>Total Free Users</h4>
+                <p>1</p>
+            </div>
+            <div class="box total-uploads">
+                <h4>Total Uploads</h4>
+                <p>0 Bytes/s</p>
+            </div>
+            <div class="box openvpn-users">
+                <h4>Connected OPENVPN Users</h4>
+                <p>0</p>
+            </div>
+            <div class="box total-downloads">
+                <h4>Total Downloads</h4>
+                <p>0 Bytes/s</p>
+            </div>
+            <div class="box wireguard-users">
+                <h4>Connected WireGuard Users</h4>
+                <p>0</p>
+            </div>
+            <!-- ... -->
+        </div>
+        <!-- Add more panels and content here -->
+    </div>
+</div>
+
+</body>
+</html>

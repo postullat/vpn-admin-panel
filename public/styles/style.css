@@ -1,0 +1,328 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+}
+.content-wrapper {
+  display: flex; /* Enables Flexbox */
+  height: 100vh; /* Full view height */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #464646;
+  height: 100vh;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  display: block;
+  margin-bottom: 9px;
+}
+
+.sidebar h3 {
+  color: white;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul li a i {
+  width: 30px; /* gives all icons a fixed width for alignment */
+  font-size: 18px; /* icon size */
+  margin-right: 10px; /* space between icon and text */
+}
+
+.main-content {
+  flex-grow: 2;
+  padding: 20px;
+  background-color: #e5e5e5;
+}
+
+.panel {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+/* Stats box colors */
+.subscribed-users {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.free-users {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.total-uploads {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.openvpn-users {
+  background-color: #ffeb3b;
+  color: #333;
+}
+
+/* Assuming a light background for visibility */
+.total-downloads {
+  background-color: #9c27b0;
+  color: #fff;
+}
+
+.wireguard-users {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+.box h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.box p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.refresh-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns children to the right */
+  padding: 10px;
+  /* ... other styles ... */
+}
+
+.timestamp-button-group {
+  display: flex;
+  align-items: center;
+}
+
+.timestamp-button-group span {
+  margin-right: 10px; /* Space between timestamp and button */
+}
+
+#refreshButton {
+  padding: 5px 10px;
+  background-color: #e0e0e0; /* Subdued color */
+  color: #333;
+  border: 1px solid #d0d0d0;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+#refreshButton:hover {
+  background-color: #d0d0d0;
+}
+
+
+.header-container {
+  width: 100%;
+  margin: auto; /* Centers the header content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+}
+
+.header h1 {
+
+  font-size: 20px; /* Adjusted font size */
+  font-weight: 500; /* Medium font weight for better readability */
+  color: #FFFFFF; /* Ensures the title is white for contrast against the gradient */
+  padding: 7px 7px 7px 55px;
+}
+
+.logout {
+  background-color: #228B22; /* A classy red for the logout button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners for the button */
+  font-size: 16px; /* Larger font size for button text */
+  font-weight: 700; /* Medium font weight for the button text */
+  transition: background-color 0.3s; /* Smooth transition for button hover effect */
+  margin-right: 20px;
+}
+
+.logout:hover {
+  color: #d0d0d0; /* Slightly darker red on hover for an interactive feel */
+}
+
+.user-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.status-dot.online {
+  background-color: green;
+}
+
+.status-dot.offline {
+  background-color: red;
+}
+
+.status-text {
+  font-size: 14px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.user-info span {
+  margin-bottom: 5px;
+}
+
+.user-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: green; /* Default to online */
+  margin-right: 5px;
+}
+
+.status-text {
+  font-size: 14px;
+}
+
+/* Dropdown button styling */
+.dropbtn {
+  /* existing styles */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.dropbtn span {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease-out; /* Smooth transition for the slide-down effect */
+  background-color: #444; /* Your dropdown background color */
+  display: none;
+  margin-top: 15px;
+}
+
+/* Dropdown content styling */
+.dropdown-content a {
+  padding: 8px 10px; /* Adjust padding to match your design */
+  text-decoration: none;
+  display: block; /* changed from flex to block for submenu items */
+  font-size: 14px; /* Smaller font size for submenu items */
+  color: white; /* or any other color as per your design */
+  position: relative; /* Needed for absolute positioning of the pseudo-element */
+}
+
+/* Adding a small solid triangle to each submenu item using a pseudo-element */
+.dropdown-content a::before {
+  content: '';
+  display: inline-block;
+  margin-right: 10px; /* Space between the triangle and the text */
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent; /* Adjust size using the border width */
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid #ccc; /* Triangle color */
+  vertical-align: middle; /* Center triangle vertically */
+}
+
+.fa-arrow::before {
+  font-size: 12px;
+}
+
+.fa-arrow {
+  text-align: end;
+}
+
+/* Class to expand the menu */
+.dropdown-content.show {
+  max-height: 500px; /* Adjust this value based on the actual height needed for your content */
+  transition: max-height 0.5s ease-in; /* Smooth transition for the slide-up effect */
+  display: block;
+}
+
+
+
+
