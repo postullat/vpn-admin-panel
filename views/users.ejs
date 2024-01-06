@@ -50,59 +50,40 @@
                 <i class="fa fa-refresh"></i> Refresh
             </button>
         </div>
-        <table>
-            <thead>
-            <tr>
-                <th>SN</th>
-                <th>Account ID</th>
-                <th>Email</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Signup Method</th>
-                <th>Subscription</th>
-                <th>Password</th>
-                <th>Type</th>
-                <th>Activate At</th>
-                <th>First Login</th>
-                <th>Last Login</th>
-                <th>Expire Date</th>
-                <th>Expired At</th>
-                <th>No of days</th>
-                <th>Country</th>
-                <th>Status</th>
-                <th>All</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!-- Fake Data Rows -->
-            <!-- Repeat this block for 20 rows with different data for each row -->
-            <% for(let i = 1; i <= 15; i++) { %>
+        <% if (isError) { %>
+            <p>Error: There was a problem fetching user data.</p>
+        <% } else { %>
+            <table>
                 <tr>
-                    <td><%= i %></td>
-                    <td>2023<%= String(i).padStart(8, '0') %></td>
-                    <td>user<%= i %>@example.com</td>
-                    <td>FirstName<%= i %></td>
-                    <td>LastName<%= i %></td>
-                    <td>Email</td>
-                    <td>Basic</td>
-                    <td>********</td>
-                    <td>User</td>
-                    <td>2023-01-01</td>
-                    <td>2023-01-02</td>
-                    <td>2023-01-10</td>
-                    <td>2024-01-01</td>
-                    <td>Not Yet</td>
-                    <td><%= 365 - i %></td>
-                    <td>USA</td>
-                    <td>Active</td>
-                    <td><input type="checkbox"></td>
-                    <td><button>Edit</button></td>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Is Email Verified</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Signup Method</th>
+                    <th>Subscription</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
                 </tr>
-            <% } %>
-            <!-- ... additional rows ... -->
-            </tbody>
-        </table>
+                <% users.forEach(function(user) { %>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.is_email_verified ? 'Yes' : 'No' %></td>
+                        <td><%= user.first_name %></td>
+                        <td><%= user.last_name %></td>
+                        <td><%= user.signup_method %></td>
+                        <td><%= user.subscription %></td>
+                        <td><%= user.role %></td>
+                        <td><%= user.status %></td>
+                        <td><%= user.createdAt.toISOString().split('T')[0] %></td>
+                        <td><%= user.updatedAt.toISOString().split('T')[0] %></td>
+                    </tr>
+                <% }); %>
+            </table>
+        <% } %>
 
         <!-- Pagination Section -->
         <div class="pagination">

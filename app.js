@@ -2,14 +2,15 @@ const { auth } = require('express-openid-connect');
 const { requiresAuth } = require('express-openid-connect');
 const express = require('express');
 const app = express();
+const userRouter = require('./src/routes/user.router');
 
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: '',
-  baseURL: 'http://128.199.206.167:3000',
+  secret: 'DYEMBztSZDPIL5zPdUjePRoxO7xbw1TNfcDZYb-Xy2tYolNPXUN-uHqLpnnznRy1',
+  baseURL: 'http://localhost:3000',
   clientID: '9K9CkEnkPdL4oLJdgqWZtKUfqHL9iRck',
-  issuerBaseURL: ''
+  issuerBaseURL: 'https://dev-nwx7l3el8wiojdji.us.auth0.com'
 };
 
 // Set EJS as templating engine
@@ -19,6 +20,8 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 app.use(express.static('public'));
 app.use('/fa', express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free'));
 app.use(auth(config));
+
+app.use('/users', userRouter);
 
 app.get('/', requiresAuth(), async (req, res) => {
   res.render('index', {isAuthenticated: req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out'});
@@ -32,13 +35,8 @@ app.get('/callback', async (req, res) => {
   res.render('index', {isAuthenticated: req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out'});
 });
 
-app.get('/users', requiresAuth(), async (req, res) => {
-  res.render('users');
-});
 
-/*app.get('/login', async (req, res) => {
-  res.render('login');
-});*/
+
 
 app.get('/signup', async (req, res) => {
   res.render('signup');

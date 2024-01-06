@@ -12,3 +12,25 @@ CREATE TABLE users (
     createdAt DATETIME,
     updatedAt DATETIME
 );
+
+INSERT INTO users (email, is_email_verified, first_name, last_name, signup_method, subscription, password, role, status, createdAt, updatedAt) VALUES
+('user1@example.com', 1, 'John', 'Doe', 'email', 'basic', 'hashed_password_1', 'user', 'active', NOW(), NOW()),
+('user2@example.com', 0, 'Jane', 'Doe', 'email', 'premium', 'hashed_password_2', 'user', 'active', NOW(), NOW()),
+('user3@example.com', 1, 'Alice', 'Smith', 'email', 'basic', 'hashed_password_3', 'admin', 'inactive', NOW(), NOW()),
+('user4@example.com', 0, 'Bob', 'Brown', 'email', 'premium', 'hashed_password_4', 'user', 'active', NOW(), NOW()),
+('user5@example.com', 1, 'Charlie', 'Davis', 'email', 'basic', 'hashed_password_5', 'user', 'active', NOW(), NOW()),
+('user6@example.com', 0, 'Daisy', 'Evans', 'email', 'premium', 'hashed_password_6', 'admin', 'inactive', NOW(), NOW()),
+('user7@example.com', 1, 'Ethan', 'Foster', 'email', 'basic', 'hashed_password_7', 'user', 'active', NOW(), NOW()),
+('user8@example.com', 0, 'Fiona', 'Green', 'email', 'premium', 'hashed_password_8', 'user', 'active', NOW(), NOW()),
+('user9@example.com', 1, 'George', 'Hill', 'email', 'basic', 'hashed_password_9', 'admin', 'inactive', NOW(), NOW()),
+('user10@example.com', 0, 'Hannah', 'Ivy', 'email', 'premium', 'hashed_password_10', 'user', 'active', NOW(), NOW()),
+('user11@example.com', 1, 'Ian', 'Jones', 'email', 'basic', 'hashed_password_11', 'user', 'active', NOW(), NOW()),
+('user12@example.com', 0, 'Julia', 'Klein', 'email', 'premium', 'hashed_password_12', 'admin', 'inactive', NOW(), NOW()),
+('user13@example.com', 1, 'Kevin', 'Lee', 'email', 'basic', 'hashed_password_13', 'user', 'active', NOW(), NOW()),
+('user14@example.com', 0, 'Laura', 'Moss', 'email', 'premium', 'hashed_password_14', 'user', 'active', NOW(), NOW()),
+('user15@example.com', 1, 'Mike', 'Nolan', 'email', 'basic', 'hashed_password_15', 'admin', 'inactive', NOW(), NOW()),
+('user16@example.com', 0, 'Nancy', 'Owens', 'email', 'premium', 'hashed_password_16', 'user', 'active', NOW(), NOW()),
+('user17@example.com', 1, 'Oliver', 'Perez', 'email', 'basic', 'hashed_password_17', 'user', 'active', NOW(), NOW()),
+('user18@example.com', 0, 'Pamela', 'Quinn', 'email', 'premium', 'hashed_password_18', 'admin', 'inactive', NOW(), NOW()),
+('user19@example.com', 1, 'Quincy', 'Ross', 'email', 'basic', 'hashed_password_19', 'user', 'active', NOW(), NOW()),
+('user20@example.com', 0, 'Rachel', 'Smith', 'email', 'premium', 'hashed_password_20', 'user', 'active', NOW(), NOW());
